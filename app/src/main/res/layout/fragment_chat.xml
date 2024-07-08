@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cg.chatapp.chat.ChatViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/chat_bg"
+        android:paddingHorizontal="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@id/message_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/message_box"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/sent_message_border"
+            android:inputType="textCapSentences"
+            android:paddingStart="6dp"
+            android:text="@={viewModel.typedMessage}"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/send_message_button"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="test" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/send_message_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="@{() -> viewModel.onSendClicked()}"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_send_message" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

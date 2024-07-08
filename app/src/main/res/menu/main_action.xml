@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myappcompat="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile"
+        android:orderInCategory="1"
+        android:title="Profile"
+        myappcompat:showAsAction="always" />
+
+    <item
+        android:id="@+id/filter"
+        android:icon="@drawable/ic_filter"
+        android:orderInCategory="2"
+        android:title="Filter"
+        myappcompat:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/log_out"
+        android:orderInCategory="3"
+        android:title="Log out"
+        myappcompat:showAsAction="always" />
+</menu>

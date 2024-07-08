@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/employeesFragment">
+
+    <fragment
+        android:id="@+id/employeesFragment"
+        android:name="com.cg.chatapp.main.employees.EmployeesFragment"
+        tools:layout="@layout/fragment_employees">
+        <action
+            android:id="@+id/action_employeesFragment_to_chat_dest"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_employeesFragment_to_employeeDetailsFragment"
+            app:destination="@id/employeeDetailsFragment" />
+        <action
+            android:id="@+id/action_employeesFragment_to_editEmployeeFragment"
+            app:destination="@id/editEmployeeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/employeeDetailsFragment"
+        android:name="com.cg.chatapp.main.employees.EmployeeDetailsFragment"
+        tools:layout="@layout/fragment_employee_details">
+        <argument
+            android:name="employee_username"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.cg.chatapp.main.chats.ChatsFragment"
+        tools:layout="@layout/fragment_chats">
+        <action
+            android:id="@+id/action_chatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.cg.chatapp.main.admin.AdminFragment"
+        tools:layout="@layout/fragment_admin">
+        <action
+            android:id="@+id/action_adminFragment_to_addEmployeeFragment"
+            app:destination="@id/addEmployeeFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_manageEmployeesFragment"
+            app:destination="@id/manageEmployeesFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="com.cg.chatapp.main.admin.add_user.AddUserFragment"
+        tools:layout="@layout/fragment_add_user" />
+
+    <fragment
+        android:id="@+id/addEmployeeFragment"
+        android:name="com.cg.chatapp.main.admin.add_employee.AddEmployeeFragment"
+        tools:layout="@layout/fragment_add_employee" />
+
+    <fragment
+        android:id="@+id/manageEmployeesFragment"
+        android:name="com.cg.chatapp.main.admin.manage_employees.ManageEmployeesFragment"
+        tools:layout="@layout/fragment_manage_employees">
+        <action
+            android:id="@+id/action_manageEmployeesFragment_to_editEmployeeFragment"
+            app:destination="@id/editEmployeeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editEmployeeFragment"
+        android:name="com.cg.chatapp.main.admin.edit_employee.EditEmployeeFragment"
+        tools:layout="@layout/fragment_edit_employee">
+        <argument
+            android:name="employee_username"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.cg.chatapp.chat.ChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
+</navigation>

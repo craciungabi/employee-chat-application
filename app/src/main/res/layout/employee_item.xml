@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cg.chatapp.main.employees.EmployeesViewModel" />
+
+        <variable
+            name="employee"
+            type="com.cg.chatapp.main.employees.EmployeeDetailsItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_rounded_corners"
+        android:onClick="@{() -> viewModel.onEmployeeItemClicked(employee)}">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/employee_image"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/black"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circular_image" />
+
+        <TextView
+            android:id="@+id/employee_name"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:text="@{employee.employeeName}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/employee_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Employee Name" />
+
+        <TextView
+            android:id="@+id/employeeSkill"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:text="@{employee.skill}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/employee_image"
+            app:layout_constraintTop_toBottomOf="@id/employee_name"
+            tools:text="Employee Skill" />
+
+        <TextView
+            android:id="@+id/employeeRole"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:text="@{employee.role}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/employee_image"
+            app:layout_constraintTop_toBottomOf="@id/employeeSkill"
+            tools:text="Employee Role" />
+
+        <TextView
+            android:id="@+id/employeeNorm"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{employee.norm}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/employee_image"
+            app:layout_constraintTop_toBottomOf="@id/employeeRole"
+            tools:text="Employee Norm" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonChat"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:onClick="@{() -> viewModel.onChatClicked(employee.username)}"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/stat_notify_chat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "165996712926",
+    "project_id": "cg-chat-app1",
+    "storage_bucket": "cg-chat-app1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165996712926:android:e7483aa4aae24f365b834f",
+        "android_client_info": {
+          "package_name": "com.cg.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165996712926-1u6kas7as3o7vshqjg9o31411ataonr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT2MWekW3-8gxKVMszS0CXf5CxvytYmm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165996712926-1u6kas7as3o7vshqjg9o31411ataonr8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
